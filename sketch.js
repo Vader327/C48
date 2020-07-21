@@ -26,11 +26,10 @@ var weatherData = [];
 var horoscopes = [];
 var horoscopeNames = ["Aquarius","Pisces","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn"];
 
-var changed = false;
 var clicked = false;
 
 function setup(){
-  createCanvas(displayWidth, displayHeight);
+  //createCanvas(displayWidth, displayHeight);
 
   getData();
 
@@ -297,6 +296,7 @@ function setup(){
 function draw(){
   background("lightgray");
 
+
   citySelector.changed(()=>{
     hospitalSelector.show();
     hospitalSelector.elt.innerHTML = "";
@@ -333,7 +333,6 @@ function draw(){
     boxDiv.hide();
     hideButton.hide();
     table.style = "left:" + displayWidth/4 + "px; top:450px; display:none";
-    boxDiv.style("width","300px");
   })
 
   weatherIcon.mousePressed(()=>{
@@ -347,6 +346,11 @@ function draw(){
       temperature.show();
       humidity.show();
       weatherDescription.show();
+      weatherSelector.elt.value = "defaultValue";
+      temperature.html("Please select a city.");
+      humidity.html("");
+      weatherDescription.html("");
+      
       clicked = true;
     }
   })
@@ -361,7 +365,9 @@ function draw(){
       boxDiv.show();
       hideButton.show();
       horoscopeSelector.show();
+      horoscopeSelector.elt.value = "defaultValue";
       horoscopeText.show();
+      horoscopeText.html("Please select your Sun Sign.");
       clicked = true;
     }
   })
@@ -386,6 +392,10 @@ function draw(){
       citySelector.show();
       info.show();
       search.show();
+      hospitalSelector.hide();
+      citySelector.elt.value = "defaultValue";
+      hospitalSelector.elt.value = "defaultValue";
+      info.html("Please select a city and a hospital.<br>Select a city then press the search button to select a hospital.");
       clicked = true;
     }
   })
@@ -407,7 +417,6 @@ function draw(){
   newJoke.mousePressed(()=>{
     getJoke();
   })
-
 
   yoga.mousePressed(()=>{
     if(clicked===false){
@@ -833,6 +842,7 @@ function hideButtons(){
   newJoke.hide();
 
   clicked = false;
+  boxDiv.style("width","300px");
 }
 
 function createButtons(){
