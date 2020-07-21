@@ -27,6 +27,7 @@ var horoscopes = [];
 var horoscopeNames = ["Aquarius","Pisces","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn"];
 
 var clicked = false;
+var isloaded = false;
 
 function setup(){
   //createCanvas(displayWidth, displayHeight);
@@ -347,9 +348,12 @@ function draw(){
       humidity.show();
       weatherDescription.show();
       weatherSelector.elt.value = "defaultValue";
-      temperature.html("Please select a city.");
-      humidity.html("");
-      weatherDescription.html("");
+      
+      if(isloaded == true){
+        temperature.html("Please select a city.");
+        humidity.html("");
+        weatherDescription.html("");
+      }
       
       clicked = true;
     }
@@ -367,7 +371,10 @@ function draw(){
       horoscopeSelector.show();
       horoscopeSelector.elt.value = "defaultValue";
       horoscopeText.show();
-      horoscopeText.html("Please select your Sun Sign.");
+
+      if(isloaded == true){
+        horoscopeText.html("Please select your Sun Sign.");
+      }
       clicked = true;
     }
   })
@@ -395,7 +402,10 @@ function draw(){
       hospitalSelector.hide();
       citySelector.elt.value = "defaultValue";
       hospitalSelector.elt.value = "defaultValue";
-      info.html("Please select a city and a hospital.<br>Select a city then press the search button to select a hospital.");
+      
+      if(isloaded == true){
+        info.html("Please select a city and a hospital.<br>Select a city then press the search button to select a hospital.");
+      }
       clicked = true;
     }
   })
@@ -773,6 +783,7 @@ async function getData(){
   humidity.html("");
   horoscopeText.html("Please select your Sun Sign.");
   info.html("Please select a city and a hospital.<br>Select a city then press the search button to select a hospital.");
+  isloaded = true;
 }
 
 async function getJoke(){
