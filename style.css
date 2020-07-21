@@ -1,0 +1,161 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+canvas{
+  display: block;
+}
+
+img{
+  cursor: pointer;
+}
+
+select{
+  animation: fadeIn 1s ease-in;
+  cursor: pointer;
+  font-family: 'Quicksand';
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 1.5em;
+  border: 3px solid rgb(0, 183, 255);
+  outline: none;
+  transition: 0.5s all;
+}
+select:hover{
+  border-color:rgb(121, 218, 153);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s all;
+}
+
+#weatherDescription{
+  font-family: 'Quicksand';
+  animation: fadeIn 1s ease-in;
+}
+#iconText{
+  font-family: 'Quicksand';
+}
+
+#weatherIcon{
+  width: 90px;
+  height: 90px;
+  border-radius: 0.7cm;
+  outline: none;
+  transition: all 0.5s;
+}
+#weatherIcon:hover{
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.5s;
+}
+#horoscopeIcon{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  outline: none;
+  transition: all 0.5s;
+}
+#horoscopeIcon:hover{
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.5s;
+}
+#iconText{
+  text-align: center;
+}
+
+#buttonLink{
+  cursor: pointer;
+  width: 200px;
+  animation: fadeIn 1s ease-in;
+  color: white;
+  font-family: 'Duru Sans';
+  text-align: center;
+  font-size: 15px;
+  border: none;
+  border-radius: 24px;
+  height: 30px;
+  background: linear-gradient(to right, #67b26b, #4ca2cb);
+  transition: all 0.4s;
+  outline: none;
+}
+#buttonLink:before{
+  content: none;
+}
+#buttonLink:after{
+  content: ' \003E\003E';
+  font-weight: 900;
+  opacity: 0;
+  transition: all 0.4s;
+}
+#buttonLink:hover:before{
+  opacity: 0;
+  padding-right: none;
+}
+#buttonLink:hover:after{
+  opacity: 1;
+  padding-right: 20px;
+}
+
+#imgText{
+  font-family: "Duru Sans";
+  font-size: 40px;
+}
+#buttonBg{
+  background-color: lightgray;
+  border-radius: 0.5cm;
+  animation: fadeIn 1s ease-in;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#cross{
+  animation: fadeIn 1s ease-in;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  transition: all 0.5s;
+}
+#cross:hover{
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
+table.tableizer-table {
+  font-size: 15px;
+  font-family: "Duru Sans";
+  position: absolute;
+  z-index: 1;
+  background-color: #FFF;
+  animation: fadeIn 1s ease-in;
+} 
+.tableizer-table td {
+  border: 1px solid #CCC;
+}
+.tableizer-table th {
+  background-color: #104E8B; 
+  color: #FFF;
+  font-weight: bold;
+}
+
+@keyframes spin{
+   100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  } 
+}
+
+@keyframes fadeIn{
+  0% {opacity: 0;}
+  100% {opacity: 1;} 
+}
+
+@keyframes fadeOut{
+  0% {opacity: 1;}
+  100% {opacity: 0;} 
+}
+
+@keyframes blurIn{
+  0% {filter: blur(0px);}
+  100% {filter: blur(2px);} 
+}
